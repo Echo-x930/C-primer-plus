@@ -76,7 +76,7 @@ cout << oct;	  //转换为8进制输出模式
 
 （不带后缀时）与10进制不同：16或8进制存储不下时会考察能否使用当前类型的unsigned类型
 
-> **So:** 可以用这个方法配合sizeof()计算某个未知值的大小范围；
+> #### **So:** 可以用这个方法配合sizeof()计算某个未知值的大小范围；
 
 
 
@@ -135,13 +135,13 @@ yams[3] = {20, 15, 5}    //不行，只能在初始化时这样赋值
 
 ### 4.2 字符串
 
-字符串数组初始化的小技巧：
+**字符串数组初始化的小技巧：**
 
 ```C++
 char fish[] = "Bubbles";   //可以让编译器自行确定大小比较靠谱
 ```
 
-用char数组来存储字符串可能发生的错误：
+**用char数组来存储字符串可能发生的错误：**
 
 ```C++
 cin >> name[20];
@@ -152,15 +152,50 @@ cin >> home[20];
 
 > 因为编译器将中间的空格作为结束符，从而将一个字符串分为了两次输入
 
-由上述错误引出，istream中的类（如cin）提供了面向行的成员函数getline()/ get()
+**由上述错误引出，istream中的类（如cin）提供了面向行的成员函数getline()/ get()**
 
 ```C++
 cin.getline(name, 20).getline(home, 20);
 cin.get(name, 20).get().get(home, 20);//cin.get()函数返回一个cin对象,再用来调用get()
-//具有相同效果且正确，中间多一个.get()是由于，get函数不会读入换行符因此需要额外读一次消耗换行符
+//.get()不带参数代表读取下一个字符哪怕是换行符
 ```
 
 > 若读到空行会阻断接下来的读取！
+
+**混合输入字符串和数字：**
+
+```C++
+cin >> year;
+//输入2000
+char address[80];
+cin.getline(address, 80);
+//会出现getline到了一个换行符，因为2000后面的换行符在cin流里但没有被拿走
+//因此需要改为：
+cin >> year;
+cin.get():
+......
+```
+
+> #### cin.getline()读一行+换行符0
+>
+> #### cin.get(dir, size)读一行（留下换行符）
+>
+> #### cin.get()读取下一个字符，哪怕是换行符
+
+### 4.3 String类简介
+
+与iostream类相同，需要#include <string>
+
+```C++
+getline(cin, str) //意为将cin 存入 str中
+```
+
+```C++ 
+wchar_t title[] = L"TitleText"；  //用L输入wchar string
+char16_t name[] = u"NameText";	 //用u输入char_16 string
+char32_t car[] = U"CarText";	 //用U输入char_32 string
+R"(原始字符串)"    //可以在“和/中间加任何字符但开头结尾要相同
+```
 
 
 
