@@ -197,6 +197,8 @@ char32_t car[] = U"CarText";	 //用U输入char_32 string
 R"(原始字符串)"    //可以在“和/中间加任何字符但开头结尾要相同
 ```
 
+### 4.4 结构简介
 
+> #### So:C++结构（类）成员赋值问题：https://ask.csdn.net/questions/1092976
 
 自2020-6-8日起以C++ Primer Plus为中心自学Ｃ++的过程与心得！欢迎大家交流
