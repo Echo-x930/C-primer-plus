@@ -209,6 +209,12 @@ kinda 变形体，某一时刻只有一个固定类型
 
 ### 4.6 枚举
 
+```C++
+enum categr {red = 0, green = 1, blue = 9};
+categr = red
+int i = red    //=0
+```
 
+> #### 可分类用
 
 自2020-6-8日起以C++ Primer Plus为中心自学Ｃ++的过程与心得！欢迎大家交流
