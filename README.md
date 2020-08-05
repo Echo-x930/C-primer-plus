@@ -217,4 +217,21 @@ int i = red    //=0
 
 > #### 可分类用
 
+### 4.7  指针和自由存储空间
+
+OOP相对于过程性编程强调在运行阶段（而不是编译阶段）进行决策，例如可以使用关键字new来重新请求合适的内存！
+
+此时：地址成为指定的量，而值称为派生量。
+
+> int*  sth 整型的间接变量（indirect value）sth
+>
+> int   *sth 意为取消引用（dereference） sth后是整型
+
+```C++
+int * pt = &higgens;  //初始化的是指针pt而不是整型*pt
+//可理解为：integer‘s indirect value is &...
+```
+
+
+
 自2020-6-8日起以C++ Primer Plus为中心自学Ｃ++的过程与心得！欢迎大家交流
