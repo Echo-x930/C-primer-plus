@@ -296,9 +296,15 @@ inline double function(x) {return x++}
 
 **创建引用变量**
 
+
 ```C++
-int & rodents
+int & rodents = rats;  
+//引用的必须是左值！
 ```
+
+&不是地址引用符， int &指的是指向int的引用
+
+
 
 &不是地址引用符， int &指的是指向int的引用
 
